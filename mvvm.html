@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--双向数据绑定 靠的是表单-->
+    <input type="text" v-model="message.a">
+    <div></div>
+    <ul><li></li></ul>
+    {{message.a}} {{message.a}}
+</div>
+<script src="watcher.js"></script>
+<script src="observer.js"></script>
+<script src="compile.js"></script>
+<script src="MVVM.js"></script>
+<script>
+    //vue中实现双向绑定  1.模板的编译 2.数据劫持（观察数据变化）3.watcher
+    let vm=new MVVM({
+      el:'#app',
+      data:{
+        message:{
+          a:'hello world',
+          b:{
+            name:'jerry'
+          }
+        }
+      }
+    })
+</script>
+</body>
+</html>
